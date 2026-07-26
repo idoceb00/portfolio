@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { SITE } from "../site-config";
+import ProjectFilter from "../components/ProjectFilter.svelte";
+
+const projects = (await getCollection("projects"))
+  .sort((a, b) => Number(b.data.featured) - Number(a.data.featured))
+  .map((p) => ({
+    title: p.data.title,
+    description: p.data.description,
+    tags: p.data.tags,
+    repoUrl: p.data.repoUrl,
+    demoUrl: p.data.demoUrl,
+  }));
+---
+
+<Layout
+  title={`Proyectos - ${SITE.author.fullName}`}
+  description="Proyectos de software en los que he trabajado."
+>
+  <main class="max-w-4xl mx-auto p-6 text-white">
+    <a href="/" class="text-sm opacity-70 hover:opacity-100 hover:text-primary-500">&larr; Volver al inicio</a>
+    <h1 class="text-3xl font-bold mt-4 mb-8">Proyectos</h1>
+    <ProjectFilter client:load projects={projects} />
+  </main>
+</Layout>

@@ -1,0 +1,35 @@
+---
+import Card from "./Card/index.astro";
+
+interface Job {
+  role: string;
+  company: string;
+  start: string;
+  end: string;
+  description: string;
+}
+
+const jobs: Job[] = [
+  {
+    role: "[Tu puesto]",
+    company: "[Nombre de la empresa]",
+    start: "[Mes Año]",
+    end: "Presente",
+    description: "[Qué hiciste, con qué stack, qué impacto tuvo]",
+  },
+];
+---
+
+<Card title="Experiencia" colSpan="md:col-span-2" rowSpan="lg:row-span-3" padding="p-6">
+  <ul class="flex flex-col gap-4 mt-4">
+    {jobs.map((job) => (
+      <li>
+        <div class="flex justify-between items-baseline flex-wrap gap-1">
+          <h3 class="font-bold">{job.role} · {job.company}</h3>
+          <span class="text-xs opacity-60">{job.start} – {job.end}</span>
+        </div>
+        <p class="text-sm opacity-80 mt-1">{job.description}</p>
+      </li>
+    ))}
+  </ul>
+</Card>

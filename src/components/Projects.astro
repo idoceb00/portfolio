@@ -1,0 +1,12 @@
+---
+import { getCollection } from "astro:content";
+import Card from "./Card/index.astro";
+
+const projects = await getCollection("projects");
+---
+
+<Card
+  title="Proyectos"
+  body={`${projects.length} proyecto${projects.length === 1 ? "" : "s"} en los que he trabajado.`}
+  href="/proyectos"
+/>
