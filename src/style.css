@@ -145,3 +145,13 @@ body::before {
 .switchboard .star[data-state="high"]::after {
   opacity: 1;
 }
+
+.stripes-diagonal {
+  background-image: repeating-linear-gradient(
+    135deg,
+    theme("colors.darkslate.900") 0px,
+    theme("colors.darkslate.900") 14px,
+    theme("colors.darkslate.700") 14px,
+    theme("colors.darkslate.700") 28px
+  );
+}

@@ -11,6 +11,7 @@ export const SITE = {
         twitterHandle: "", // without "@"
     },
     location: {
+        city: "León",
         countryName: "Spain",
         countryCode: "ES",
         timezone: "Europe/Madrid",
@@ -20,5 +21,5 @@ export const SITE = {
         linkedin: "https://www.linkedin.com/in/idoceb00/",
         email: "idoceb00@gmail.com",
     },
-    stack: ["Golang", "Gin", "Gorm", "Java", "Spring Boot", "Python", "FastAPI", "Git", "GithubActions", "Docker"],
+    stack: ["Go (Gin, GORM)", "Python (FastAPI, Pydantic)", "Java", "PostgreSQL", "Docker", "Git", "GitHub Actions"],
 }
