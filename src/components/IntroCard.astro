@@ -5,7 +5,7 @@ import { LINKS } from "../lib/constants";
 import { Icon } from "astro-icon/components";
 import TechChips from "./TechChips.astro";
 import { SITE } from "../site-config";
-import MyAvatar from "../assets/me.jpeg";
+import MyAvatar from "../assets/me.png";
 ---
 
 <Card colSpan="md:col-span-3" rowSpan="md:row-span-4">
@@ -70,7 +70,7 @@ import MyAvatar from "../assets/me.jpeg";
     <img
       id="memoji-avatar"
       src={MyAvatar.src}
-      class="w-auto max-h-[300px] select-none absolute right-[-110px] bottom-[-20px] z-[-1] opacity-50 md:opacity-100 md:relative md:right-auto md:bottom-auto md:z-auto pointer-events-none shrink-0"
+      class="w-auto max-h-[300px] select-none absolute right-[-110px] bottom-[-20px] z-[-1] opacity-50 md:opacity-100 md:relative md:right-auto md:bottom-auto md:z-auto pointer-events-none shrink-0 rounded-3xl"
       alt={`photo of ${SITE.author.firstName}`}
       loading="eager"
     />
@@ -79,15 +79,7 @@ import MyAvatar from "../assets/me.jpeg";
 
 <style>
   #memoji-avatar {
-    animation: levitate 3s ease-in-out infinite;
-  }
-
-  @keyframes levitate {
-    0%, 100% {
-      transform: translateY(-10px);
-    }
-    50% {
-      transform: translateY(10px);
-    }
+    -webkit-mask-image: radial-gradient(ellipse at center, black 55%, transparent 100%);
+    mask-image: radial-gradient(ellipse at center, black 55%, transparent 100%);
   }
 </style>
