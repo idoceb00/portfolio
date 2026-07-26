@@ -3,6 +3,7 @@ import Card from "./Card/index.astro";
 import Button from "./Button.astro";
 import { LINKS } from "../lib/constants";
 import { Icon } from "astro-icon/components";
+import TechChips from "./TechChips.astro";
 import { SITE } from "../site-config";
 import MyAvatar from "../assets/me.jpeg";
 ---
@@ -30,6 +31,7 @@ import MyAvatar from "../assets/me.jpeg";
             Feel free to reach out to me if you have any project in mind, want
             to collaborate, or just want to say hello.
           </span>
+          <TechChips items={SITE.stack} />
         </p>
       </div>
       <div class="flex flex-col lg:flex-row gap-2 lg:gap-4">

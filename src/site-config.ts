@@ -20,4 +20,5 @@ export const SITE = {
         linkedin: "https://www.linkedin.com/in/idoceb00/",
         email: "idoceb00@gmail.com",
     },
+    stack: ["[Golang]", "[Gin]", "[Gorm]", "[Java]", "[Spring Boot]", "[Python]", "[FastAPI]", "[Git]", "[GithubActions], [Docker]"],
 }

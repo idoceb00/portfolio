@@ -20,9 +20,7 @@ import { SITE } from "../site-config";
       <br />
       My primary tools of choice includes:
       <ul class="list-disc list-inside">
-        <li>[TU TECNOLOGÍA]</li>
-        <li>[TU TECNOLOGÍA]</li>
-        <li>[TU TECNOLOGÍA]</li>
+        {SITE.stack.map((tech) => <li>{tech}</li>)}
       </ul>
       <p class="text-sm font-light mt-2">
         I also have knowledge of [TUS CONOCIMIENTOS AQUÍ].
