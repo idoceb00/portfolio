@@ -3,25 +3,37 @@ interface Props {
   items: string[];
 }
 const { items } = Astro.props;
+const track = [...items, ...items];
 ---
 
-<div class="flex gap-2 flex-wrap my-4">
-  {items.map((item, i) => (
-    <span
-      class="chip px-3 py-1 rounded-full border border-darkslate-400 text-sm opacity-0 hover:border-primary-500 hover:text-primary-500 transition-colors cursor-default"
-      style={`animation-delay: ${i * 90}ms`}
-    >
-      {item}
-    </span>
-  ))}
+<div
+  class="tech-marquee relative overflow-hidden my-4"
+  style="width: 100%;"
+>
+  <div
+    class="marquee-track flex gap-3 w-max"
+    style={`animation-duration: ${items.length * 1.8}s`}
+  >
+    {track.map((item) => (
+      <span class="chip shrink-0 px-3 py-1 rounded-full border border-darkslate-400 text-sm whitespace-nowrap">
+        {item}
+      </span>
+    ))}
+  </div>
 </div>
 
 <style>
-  .chip {
-    animation: chip-in 0.5s ease-out forwards;
+  .tech-marquee {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
   }
-  @keyframes chip-in {
-    from { opacity: 0; transform: translateY(6px) scale(0.9); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
+  .marquee-track {
+    animation-name: marquee-scroll;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  @keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
   }
 </style>
