@@ -1,11 +1,24 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-import "../styles/global.css";
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import IntroCard from "../components/IntroCard.astro";
+import AboutMe from "../components/AboutMe.astro";
+import ContactsCard from "../components/ContactsCard.astro";
+import MyStack from "../components/MyStack.astro";
+import "../style.css";
+import { SITE } from "../site-config"
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+	description={`I'm a developer based in ${SITE.location.countryName},`}
+	title={`${SITE.author.fullName} - ${SITE.author.jobTitle}`}
+>
+
+<main
+    class="text-white m-auto p-2 grid gap-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:grid-cols-2 md:gap-3 md:p-6 lg:h-screen lg:grid-rows-8 lg:grid-cols-4 lg:gap-4 lg:max-h-[800px]"
+  >
+    <IntroCard />
+    <AboutMe />
+    <ContactsCard />
+    <MyStack />
+  </main>
 </Layout>
