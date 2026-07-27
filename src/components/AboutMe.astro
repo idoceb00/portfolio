@@ -3,29 +3,47 @@ import Card from "./Card/index.astro";
 import { SITE } from "../site-config";
 ---
 
-<Card colSpan="md:col-span-1" rowSpan="md:row-span-6" title="About me">
-  <div class="flex flex-col gap-2">
+<Card colSpan="md:col-span-2" rowSpan="md:row-span-8" title="About me">
+  <div class="flex flex-col gap-3">
     <p class="sr-only">
-      Hi, I'm {SITE.author.firstName}, a graduate in Computer Engineering from {SITE.location.countryName}. My primary
-      tools include Go (Gin, GORM), Python (FastAPI, Pydantic), and Java.
-      I also have experience with backend development, REST APIs, relational databases, and AI-based applications.
+      Hi, I'm {SITE.author.firstName}, a graduate in Computer Engineering from {SITE.location.countryName},
+      with Honors in Programming I and in my internship placement. I'm a backend-focused
+      developer: I care about the logic and architecture behind an application as much
+      as the product itself. During my internship at Xeridia (AI & Software Engineering),
+      I built a REST API with FastAPI to serve an NLP-based news classification model,
+      and contributed to a multi-agent LLM system that analyzes Microsoft Teams meetings —
+      parsing transcripts, detecting risks and blockers, and designing the core API
+      architecture. My primary tools include {SITE.stack.join(", ")}.
+      I'm currently looking to start my career as a Backend Developer or Software Engineer.
       Beyond coding, I'm an elite university rugby player and coach.
     </p>
-    <div aria-hidden="true" class="text-sm font-light">
-      <p class="text-sm font-light">
-        Hi, I'm {SITE.author.firstName}, a graduate in Computer Engineering from {SITE.location.countryName}.
+    <div aria-hidden="true" class="flex flex-col gap-3 text-sm font-light">
+      <p>
+        Hi, I'm {SITE.author.firstName}, a graduate in Computer Engineering from {SITE.location.countryName},
+        with Honors in Programming I and in my internship placement.
       </p>
-      <br />
-      My primary tools of choice include:
-      <ul class="list-disc list-inside">
-        {SITE.stack.map((tech) => <li>{tech}</li>)}
-      </ul>
-      <p class="text-sm font-light mt-2">
-        I have experience with backend development, REST APIs, relational databases, and AI-based applications.
+      <p>
+        I'm a backend-focused developer: I care about the logic and architecture
+        behind an application as much as the end product. During my internship at
+        Xeridia (AI &amp; Software Engineering), I built a REST API with FastAPI to
+        serve an NLP-based news classification model, and contributed to a
+        multi-agent LLM system that analyzes Microsoft Teams meetings — parsing
+        transcripts, detecting risks and blockers, and designing the core API
+        architecture.
+      </p>
+      <div>
+        <p class="mb-1">My primary tools of choice:</p>
+        <ul class="list-disc list-inside">
+          {SITE.stack.map((tech) => <li>{tech}</li>)}
+        </ul>
+      </div>
+      <p>
+        I'm currently looking to start my career as a Backend Developer or
+        Software Engineer, and I keep building things on my own time to keep learning.
+      </p>
+      <p>
+        Beyond coding, I'm an elite university rugby player and coach.
       </p>
     </div>
-    <p class="text-sm font-light">
-      Beyond coding, I'm an elite university rugby player and coach.
-    </p>
   </div>
 </Card>
