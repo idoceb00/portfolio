@@ -4,15 +4,20 @@ import { getCollection } from "astro:content";
 import { SITE } from "../site-config";
 import ProjectFilter from "../components/ProjectFilter.svelte";
 
-const projects = (await getCollection("projects"))
+const allProjects = (await getCollection("projects"))
   .sort((a, b) => Number(b.data.featured) - Number(a.data.featured))
   .map((p) => ({
     title: p.data.title,
     description: p.data.description,
     tags: p.data.tags,
+    category: p.data.category,
+    type: p.data.type,
     repoUrl: p.data.repoUrl,
     demoUrl: p.data.demoUrl,
   }));
+
+const personalProjects = allProjects.filter((p) => p.type === "personal");
+const academicProjects = allProjects.filter((p) => p.type === "academico");
 ---
 
 <Layout
@@ -21,7 +26,20 @@ const projects = (await getCollection("projects"))
 >
   <main class="max-w-4xl mx-auto p-6 text-white">
     <a href="/" class="text-sm opacity-70 hover:opacity-100 hover:text-primary-500">&larr; Volver al inicio</a>
-    <h1 class="text-3xl font-bold mt-4 mb-8">Proyectos</h1>
-    <ProjectFilter client:load projects={projects} />
+    <h1 class="text-3xl font-bold mt-4 mb-10">Proyectos</h1>
+
+    {personalProjects.length > 0 && (
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-4">Personales</h2>
+        <ProjectFilter client:load projects={personalProjects} />
+      </section>
+    )}
+
+    {academicProjects.length > 0 && (
+      <section>
+        <h2 class="text-2xl font-bold mb-4">Académicos</h2>
+        <ProjectFilter client:load projects={academicProjects} />
+      </section>
+    )}
   </main>
 </Layout>

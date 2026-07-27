@@ -1,12 +1,12 @@
 ---
-title: "YugiCollectionManager"
-description: "Aplicación web para digitalizar y gestionar colecciones de cartas, migrando la colección física de los usuarios a un entorno organizado."
+title: "EloGap"
+description: "Aplicación web análisis de progresión y rachas en el viedojuego online League Of Legends."
 tags: ["REST API", "PostgreSQL", "Docker", "AWS S3", "CI/CD", "Golang", "Gin", "Gorm"]
 category: "API REST"
-type: "academico"
-repoUrl: "https://github.com/Grajal/SW2-YugiCollectionManager"
+type: "personal"
+repoUrl: "https://github.com/idoceb00/elogap"
 featured: true
-date: 2025-06-01
+date: 2026-06-01
 ---
 
 Proyecto grupal desarrollado durante la universidad. Lideré el desarrollo

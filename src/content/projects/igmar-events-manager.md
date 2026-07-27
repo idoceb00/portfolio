@@ -2,6 +2,8 @@
 title: "IgmarEventsManager"
 description: "Aplicación de escritorio para la gestión de tareas y reserva de material de Igmar Servicios Acústicos, con sistema de usuarios para empleados y administrador."
 tags: ["Java", "MySQL"]
+category: "Aplicación de escritorio"
+type: "academico"
 featured: true
 date: 2025-02-01
 ---
