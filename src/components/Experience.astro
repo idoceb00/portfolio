@@ -1,35 +1,11 @@
 ---
 import Card from "./Card/index.astro";
-
-interface Job {
-  role: string;
-  company: string;
-  start: string;
-  end: string;
-  description: string;
-}
-
-const jobs: Job[] = [
-  {
-    role: "IA & Software Engineering Intern",
-    company: "Xeridia",
-    start: "Oct 2025",
-    end: "Jan 2026",
-    description: "Developed a REST API with FastAPI to serve an NLP-based news classification model, including data validation, inference pipeline, and Docker deployment. Participated in building a multi-agent LLM system for automatic analysis of Microsoft Teams meetings, generating summaries, detecting risks and blockers, extracting tasks, and integrating with Jira and Confluence. Designed the system architecture and developed the main REST API, decoupling external integrations to reduce latency.",
-  },
-];
+import { jobs } from "../lib/experience";
 ---
 
-<Card title="Experiencia" colSpan="md:col-span-2" rowSpan="lg:row-span-3" padding="p-6">
-  <ul class="flex flex-col gap-4 mt-4">
-    {jobs.map((job) => (
-      <li>
-        <div class="flex justify-between items-baseline flex-wrap gap-1">
-          <h3 class="font-bold">{job.role} · {job.company}</h3>
-          <span class="text-xs opacity-60">{job.start} – {job.end}</span>
-        </div>
-        <p class="text-sm opacity-80 mt-1">{job.description}</p>
-      </li>
-    ))}
-  </ul>
-</Card>
+<Card
+  title="Experiencia"
+  body={`${jobs.length} etapa${jobs.length === 1 ? "" : "s"} profesional${jobs.length === 1 ? "" : "es"}.`}
+  href="/experiencia"
+  bgColor="squares-pattern"
+/>

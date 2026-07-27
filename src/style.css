@@ -155,3 +155,13 @@ body::before {
     theme("colors.darkslate.700") 28px
   );
 }
+
+.squares-pattern {
+  background-image: conic-gradient(
+    theme("colors.darkslate.900") 90deg,
+    theme("colors.darkslate.700") 90deg 180deg,
+    theme("colors.darkslate.900") 180deg 270deg,
+    theme("colors.darkslate.700") 270deg
+  );
+  background-size: 28px 28px;
+}
