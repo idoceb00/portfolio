@@ -5,7 +5,11 @@ import { SITE } from "../site-config";
 import ProjectFilter from "../components/ProjectFilter.svelte";
 
 const allProjects = (await getCollection("projects"))
-  .sort((a, b) => Number(b.data.featured) - Number(a.data.featured))
+  .sort((a, b) => {
+    const featDiff = Number(b.data.featured) - Number(a.data.featured);
+    if (featDiff !== 0) return featDiff;
+    return (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0);
+  })
   .map((p) => ({
     title: p.data.title,
     description: p.data.description,
