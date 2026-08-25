@@ -22,7 +22,7 @@ const schema = {
   knowsAbout: ["Go", "Python", "Java", "REST APIs", "PostgreSQL", "Docker", "FastAPI", "NLP"],
   worksFor: {
     "@type": "Organization",
-    name: "Self-Employed",
+    name: "Independiente",
     address: {
       "@type": "PostalAddress",
       addressLocality: SITE.location.countryName,
@@ -37,7 +37,7 @@ const schema = {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta content="width=device-width" name="viewport" />
@@ -50,14 +50,14 @@ const schema = {
     <meta name="author" content={SITE.author.fullName} />
     <meta
       name="keywords"
-      content={`${SITE.author.jobTitle}, ${SITE.location.countryName}, developer, web, portfolio`}
+      content={`${SITE.author.jobTitle}, ${SITE.location.countryName}, desarrollador, web, portafolio`}
     />
     <meta content="website" property="og:type" />
     <meta content={title} property="og:title" />
     <meta content={description} property="og:description" />
     <meta content={Astro.url.origin} property="og:url" />
     <meta property="og:site_name" content={SITE.author.fullName} />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content="es_ES" />
     <meta
       content={image || `${Astro.url.origin}/og-image.png`}
       property="og:image"

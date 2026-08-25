@@ -7,12 +7,12 @@ export const SITE = {
         lastName: "Doce Bedoya",
         fullName: "Ignacio Doce Bedoya",
         shortName: "Nacho",
-        jobTitle: "Graduate Computer Engineer",
+        jobTitle: "Ingeniero Informático Titulado",
         twitterHandle: "", // without "@"
     },
     location: {
         city: "León",
-        countryName: "Spain",
+        countryName: "España",
         countryCode: "ES",
         timezone: "Europe/Madrid",
     },
