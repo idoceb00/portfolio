@@ -12,24 +12,27 @@ import TechChips from "./TechChips.astro";
   <div class="flex flex-col w-full h-full gap-4">
     <div class="flex w-full flex-1 min-h-0">
       <div class="flex flex-col md:max-h-[300px] gap-4 min-w-0">
-        <h6 class="text-sm font-light m-0 text-darkslate-300">Welcome</h6>
+        <h6 class="text-sm font-light m-0 text-darkslate-300">Bienvenido</h6>
 
         <p class="sr-only">
-          Hi, I'm {SITE.author.fullName}, a software developer with strong focus on
-          the logic behind application and to make software maintainable without neglecting product engineering. 
-          
-          Feel free to reach out to me if you have any project in mind, want to
-          collaborate, or just want to say hello.
+          Hola, soy {SITE.author.fullName}, desarrollador de software recién
+          graduado en Ingeniería Informática, con un foco especial en la lógica y
+          la estructura que hay detrás de cada aplicación.
+
+          Si tienes un proyecto en mente, quieres colaborar o solo saludar, no
+          dudes en escribirme.
         </p>
         <p aria-hidden="true" class="m-0 font-light text-md">
           <span>
-            Hi, I'm <b class="font-bold">{SITE.author.fullName}</b>, a software developer with strong focus on
-            the logic behind application and to make software maintainable without neglecting product engineering. 
+            Hola, soy <b class="font-bold">{SITE.author.fullName}</b>,
+            desarrollador de software recién graduado en Ingeniería Informática,
+            con un foco especial en la lógica y la estructura que hay detrás de
+            cada aplicación.
           </span>
           <br />
           <span class="block mt-2">
-            Feel free to reach out to me if you have any project in mind, want
-            to collaborate, or just want to say hello.
+            Si tienes un proyecto en mente, quieres colaborar o solo saludar, no
+            dudes en escribirme.
           </span>
         </p>
       </div>
@@ -37,7 +40,7 @@ import TechChips from "./TechChips.astro";
         id="memoji-avatar"
         src={MyAvatar.src}
         class="w-auto max-h-[250px] select-none absolute right-[-110px] bottom-[-20px] z-[-1] opacity-50 md:opacity-100 md:relative md:right-auto md:bottom-auto md:z-auto pointer-events-none shrink-0 rounded-3xl"
-        alt={`photo of ${SITE.author.firstName}`}
+        alt={`foto de ${SITE.author.firstName}`}
         loading="eager"
       />
     </div>
@@ -46,32 +49,32 @@ import TechChips from "./TechChips.astro";
 
     <div class="flex flex-col lg:flex-row gap-2 lg:gap-4">
       <div class="flex gap-2 lg:gap-4">
-        <a href={LINKS.github} aria-label="github profile" target="_blank">
-          <Button aria-label="github profile">
+        <a href={LINKS.github} aria-label="perfil de github" target="_blank">
+          <Button aria-label="perfil de github">
             <Icon name="ri:github-fill" />
             <span class="sr-only" data-umami-event="github button"
-              >GitHub Profile</span
+              >Perfil de GitHub</span
             >
           </Button>
         </a>
         <a
           href={LINKS.linkedin}
-          aria-label="linkedin profile"
+          aria-label="perfil de linkedin"
           target="_blank"
         >
-          <Button aria-label="linkedin profile">
+          <Button aria-label="perfil de linkedin">
             <Icon name="ri:linkedin-box-fill" />
             <span class="sr-only" data-umami-event="linkedin button"
-              >Linkedin Profile</span
+              >Perfil de LinkedIn</span
             >
           </Button>
         </a>
       </div>
       <a href={`mailto:${LINKS.email}`}>
-        <Button aria-label="send me an email">
+        <Button aria-label="envíame un email">
           <span
             data-umami-event="Contact button"
-            class="font-bold whitespace-nowrap">Contact me</span
+            class="font-bold whitespace-nowrap">Contáctame</span
           >
         </Button>
       </a>
