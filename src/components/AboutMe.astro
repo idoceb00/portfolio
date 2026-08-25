@@ -3,46 +3,26 @@ import Card from "./Card/index.astro";
 import { SITE } from "../site-config";
 ---
 
-<Card colSpan="md:col-span-2" rowSpan="md:row-span-9" title="About me">
+<Card colSpan="md:col-span-2" rowSpan="md:row-span-9" title="Sobre mí">
   <div class="flex flex-col gap-3">
     <p class="sr-only">
-      Hi, I'm {SITE.author.firstName}, a graduate in Computer Engineering from {SITE.location.countryName},
-      with Honors in Programming I and in my internship placement. I'm a backend-focused
-      developer: I care about the logic and architecture behind an application as much
-      as the product itself. During my internship at Xeridia (AI & Software Engineering),
-      I built a REST API with FastAPI to serve an NLP-based news classification model,
-      and contributed to a multi-agent LLM system that analyzes Microsoft Teams meetings —
-      parsing transcripts, detecting risks and blockers, and designing the core API
-      architecture. My primary tools include {SITE.stack.join(", ")}.
-      I'm currently looking to start my career as a Backend Developer or Software Engineer.
-      Beyond coding, I'm an elite university rugby player and coach.
+      Soy un desarrollador que disfruta creando soluciones a problemas concretos con las herramientas que hagan falta, pero que siempre da una importancia especial al cómo: al diseño y la estructuración de los sistemas. Necesito saber el porqué de cada decisión, soy curioso y disfruto del proceso tanto como del resultado. Actualmente busco dar mis primeros pasos en el desarrollo de software. Fuera de la pantalla soy amante del deporte: jugador de rugby desde niño y también entrenador.
     </p>
-    <div aria-hidden="true" class="flex flex-col gap-3 text-sm font-light">
+    <div aria-hidden="true" class="flex flex-col gap-3 text-base font-light">
       <p>
-        Hi, I'm {SITE.author.firstName}, a graduate in Computer Engineering from {SITE.location.countryName},
-        with Honors in Programming I and in my internship placement.
+        Soy un desarrollador que disfruta creando soluciones a problemas concretos con las herramientas que hagan falta: lenguajes, frameworks e incluso LLMs y herramientas de Inteligencia Artificial. Sin embargo, sea cual sea el proyecto, siempre acabo dando una importancia especial al <span class="font-medium text-white">cómo</span>: al diseño y la estructuración de los sistemas que desarrollo.
       </p>
       <p>
-        I'm a backend-focused developer: I care about the logic and architecture
-        behind an application as much as the end product. During my internship at
-        Xeridia (AI &amp; Software Engineering), I built a REST API with FastAPI to
-        serve an NLP-based news classification model, and contributed to a
-        multi-agent LLM system that analyzes Microsoft Teams meetings — parsing
-        transcripts, detecting risks and blockers, and designing the core API
-        architecture.
-      </p>
-      <div>
-        <p class="mb-1">My primary tools of choice:</p>
-        <ul class="list-disc list-inside">
-          {SITE.stack.map((tech) => <li>{tech}</li>)}
-        </ul>
-      </div>
-      <p>
-        I'm currently looking to start my career as a Backend Developer or
-        Software Engineer, and I keep building things on my own time to keep learning.
+        Me paro a pensar en las abstracciones adecuadas para modelar el dominio con claridad, y en construir un software mantenible donde cada decisión tenga su sitio y su razón. El resultado no debería ser solo código útil, sino también elegante, pensando en quien tendrá que mantenerlo después, muchas veces, mi propio yo del futuro.
       </p>
       <p>
-        Beyond coding, I'm an elite university rugby player and coach.
+        Necesito saber el porqué de cada decisión y cómo funciona aquello que uso; no me quedo tranquilo tratando una herramienta como una caja negra. Por eso soy curioso y disfruto tanto del resultado como del proceso: cada proyecto es, en el fondo, una excusa para entender algo que antes no entendía.
+      </p>
+      <p>
+        Actualmente busco dar mis primeros pasos en el desarrollo de software, en un equipo donde aportar, asumir retos reales y seguir creciendo rodeado de gente con más experiencia de la que aprender.
+      </p>
+      <p>
+        Fuera de la pantalla, soy un amante del deporte. He jugado al rugby desde niño hasta el final de la universidad, donde me desempeñé no solo como jugador, sino también como entrenador. De ahí me llevo el trabajo en equipo, la constancia y (desde el rol de entrenador) aprender a comunicar y a sacar lo mejor de cada persona para que el grupo funcione.
       </p>
     </div>
   </div>
