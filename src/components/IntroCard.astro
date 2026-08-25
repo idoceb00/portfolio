@@ -10,8 +10,8 @@ import TechChips from "./TechChips.astro";
 
 <Card colSpan="md:col-span-2" rowSpan="lg:row-span-5">
   <div class="flex flex-col w-full h-full gap-4">
-    <div class="flex flex-col-reverse md:flex-row w-full gap-4 flex-1 min-h-0">
-      <div class="flex flex-col md:max-h-[300px] gap-4 min-w-0">
+    <div class="flex flex-col-reverse md:flex-row w-full gap-4">
+      <div class="flex flex-col gap-4 min-w-0 overflow-hidden">
         <h6 class="text-sm font-light m-0 text-darkslate-300">Bienvenido</h6>
 
         <p class="sr-only">
@@ -47,7 +47,7 @@ import TechChips from "./TechChips.astro";
 
     <TechChips items={SITE.stack} />
 
-    <div class="flex flex-col lg:flex-row gap-2 lg:gap-4">
+    <div class="flex flex-row flex-wrap gap-2 lg:gap-4">
       <div class="flex gap-2 lg:gap-4">
         <a href={LINKS.github} aria-label="perfil de github" target="_blank">
           <Button aria-label="perfil de github">
