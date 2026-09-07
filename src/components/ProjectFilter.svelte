@@ -4,38 +4,50 @@
     description: string;
     tags: string[];
     category: string;
+    type: "personal" | "academico";
+    status: "en_desarrollo" | "terminado";
     repoUrl?: string;
     demoUrl?: string;
   }
 
   let { projects }: { projects: Project[] } = $props();
 
-  const categories = [...new Set(projects.map((p) => p.category))].sort();
+  const statuses = [...new Set(projects.map((p) => p.status))];
 
-  let selectedCategory = $state<string | null>(null);
+  let selectedStatus = $state<string | null>(null);
 
   const filtered = $derived(
-    selectedCategory ? projects.filter((p) => p.category === selectedCategory) : projects
+    selectedStatus ? projects.filter((p) => p.status === selectedStatus) : projects
   );
+
+  const statusLabels: Record<string, string> = {
+    en_desarrollo: "En desarrollo",
+    terminado: "Terminado",
+  };
+
+  const typeLabels: Record<string, string> = {
+    personal: "Personal",
+    academico: "Académico",
+  };
 </script>
 
 <div class="flex gap-2 flex-wrap mb-6">
   <button
-    class="px-3 py-1 rounded-full border text-sm transition-colors {selectedCategory === null
+    class="px-3 py-1 rounded-full border text-sm transition-colors {selectedStatus === null
       ? 'bg-primary-500 border-primary-500 text-black'
       : 'border-darkslate-400 hover:border-primary-500'}"
-    onclick={() => (selectedCategory = null)}
+    onclick={() => (selectedStatus = null)}
   >
     Todos
   </button>
-  {#each categories as category}
+  {#each statuses as status}
     <button
-      class="px-3 py-1 rounded-full border text-sm transition-colors {selectedCategory === category
+      class="px-3 py-1 rounded-full border text-sm transition-colors {selectedStatus === status
         ? 'bg-primary-500 border-primary-500 text-black'
         : 'border-darkslate-400 hover:border-primary-500'}"
-      onclick={() => (selectedCategory = category)}
+      onclick={() => (selectedStatus = status)}
     >
-      {category}
+      {statusLabels[status] || status}
     </button>
   {/each}
 </div>
@@ -43,6 +55,14 @@
 <div class="grid gap-6 sm:grid-cols-2">
   {#each filtered as project}
     <article class="bg-darkslate-600 rounded-lg p-5 border border-darkslate-400 hover:border-primary-500 transition-colors duration-300">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-xs px-2 py-0.5 rounded-full {project.status === 'en_desarrollo' ? 'bg-green-500/20 text-green-400' : 'bg-darkslate-500 text-darkslate-300'}">
+          {statusLabels[project.status] || project.status}
+        </span>
+        <span class="text-xs px-2 py-0.5 rounded-full bg-darkslate-500 text-darkslate-300">
+          {typeLabels[project.type] || project.type}
+        </span>
+      </div>
       <h3 class="font-bold text-xl">{project.title}</h3>
       <p class="text-sm opacity-80 mt-2">{project.description}</p>
       {#if project.tags.length > 0}

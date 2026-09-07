@@ -16,6 +16,7 @@ const allProjects = (await getCollection("projects"))
     tags: p.data.tags,
     category: p.data.category,
     type: p.data.type,
+    status: p.data.status,
     repoUrl: p.data.repoUrl,
     demoUrl: p.data.demoUrl,
   }));
