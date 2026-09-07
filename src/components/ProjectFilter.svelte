@@ -5,7 +5,7 @@
     tags: string[];
     category: string;
     type: "personal" | "academico";
-    status: "en_desarrollo" | "terminado";
+    status: "en_desarrollo" | "en_pausa" | "terminado";
     repoUrl?: string;
     demoUrl?: string;
   }
@@ -22,6 +22,7 @@
 
   const statusLabels: Record<string, string> = {
     en_desarrollo: "En desarrollo",
+    en_pausa: "En pausa",
     terminado: "Terminado",
   };
 
@@ -56,7 +57,7 @@
   {#each filtered as project}
     <article class="bg-darkslate-600 rounded-lg p-5 border border-darkslate-400 hover:border-primary-500 transition-colors duration-300">
       <div class="flex items-center gap-2 mb-2">
-        <span class="text-xs px-2 py-0.5 rounded-full {project.status === 'en_desarrollo' ? 'bg-green-500/20 text-green-400' : 'bg-darkslate-500 text-darkslate-300'}">
+        <span class="text-xs px-2 py-0.5 rounded-full {project.status === 'en_desarrollo' ? 'bg-green-500/20 text-green-400' : project.status === 'en_pausa' ? 'bg-yellow-500/20 text-yellow-400' : 'bg-darkslate-500 text-darkslate-300'}">
           {statusLabels[project.status] || project.status}
         </span>
         <span class="text-xs px-2 py-0.5 rounded-full bg-darkslate-500 text-darkslate-300">
