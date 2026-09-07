@@ -4,24 +4,33 @@ import { getCollection } from "astro:content";
 import { SITE } from "../site-config";
 import ProjectFilter from "../components/ProjectFilter.svelte";
 
+const statusPriority: Record<string, number> = {
+  en_desarrollo: 0,
+  en_pausa: 1,
+  terminado: 2,
+};
+
 const allProjects = (await getCollection("projects"))
-  .sort((a, b) => {
-    const featDiff = Number(b.data.featured) - Number(a.data.featured);
-    if (featDiff !== 0) return featDiff;
-    return (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0);
-  })
   .map((p) => ({
     title: p.data.title,
     description: p.data.description,
     tags: p.data.tags,
     category: p.data.category,
     type: p.data.type,
+    status: p.data.status,
     repoUrl: p.data.repoUrl,
     demoUrl: p.data.demoUrl,
-  }));
-
-const personalProjects = allProjects.filter((p) => p.type === "personal");
-const academicProjects = allProjects.filter((p) => p.type === "academico");
+    date: p.data.date,
+  }))
+  .sort((a, b) => {
+    if (a.type !== b.type) {
+      return a.type === "academico" ? -1 : 1;
+    }
+    if (a.type === "academico") {
+      return (b.date?.getTime() ?? 0) - (a.date?.getTime() ?? 0);
+    }
+    return (statusPriority[a.status] ?? 3) - (statusPriority[b.status] ?? 3);
+  });
 ---
 
 <Layout
@@ -32,18 +41,6 @@ const academicProjects = allProjects.filter((p) => p.type === "academico");
     <a href="/" class="text-sm opacity-70 hover:opacity-100 hover:text-primary-500">&larr; Volver al inicio</a>
     <h1 class="text-3xl font-bold mt-4 mb-10">Proyectos</h1>
 
-    {personalProjects.length > 0 && (
-      <section class="mb-12">
-        <h2 class="text-2xl font-bold mb-4">Personales</h2>
-        <ProjectFilter client:load projects={personalProjects} />
-      </section>
-    )}
-
-    {academicProjects.length > 0 && (
-      <section>
-        <h2 class="text-2xl font-bold mb-4">Académicos</h2>
-        <ProjectFilter client:load projects={academicProjects} />
-      </section>
-    )}
+    <ProjectFilter client:load projects={allProjects} />
   </main>
 </Layout>

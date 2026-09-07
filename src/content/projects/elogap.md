@@ -1,9 +1,10 @@
 ---
 title: "EloGap"
 description: "Aplicación web análisis de progresión y rachas en el viedojuego online League Of Legends."
-tags: ["REST API", "PostgreSQL", "Docker", "AWS S3", "CI/CD", "Golang", "Gin", "Gorm"]
+tags: ["REST API", "PostgreSQL", "Docker", "SvelteKit", "TypeScript", "CI/CD", "Go", "Gin", "Gorm"]
 category: "API REST"
 type: "personal"
+status: "en_pausa"
 repoUrl: "https://github.com/idoceb00/elogap"
 featured: true
 date: 2026-06-01

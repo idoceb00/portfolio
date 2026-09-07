@@ -9,6 +9,7 @@ const projects = defineCollection({
     tags: z.array(z.string()).default([]),
     category: z.string(),
     type: z.enum(["personal", "academico"]),
+    status: z.enum(["en_desarrollo", "en_pausa", "terminado"]).default("terminado"),
     repoUrl: z.string().url().optional(),
     demoUrl: z.string().url().optional(),
     featured: z.boolean().default(false),

@@ -4,6 +4,7 @@ description: "Aplicación de escritorio para la gestión de tareas y reserva de 
 tags: ["Java", "MySQL"]
 category: "Aplicación de escritorio"
 type: "academico"
+status: "terminado"
 featured: true
 date: 2025-02-01
 ---
