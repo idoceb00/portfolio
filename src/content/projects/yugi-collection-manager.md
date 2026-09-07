@@ -4,6 +4,7 @@ description: "Aplicación web para digitalizar y gestionar colecciones de cartas
 tags: ["REST API", "PostgreSQL", "Docker", "AWS S3", "CI/CD", "Golang", "Gin", "Gorm"]
 category: "API REST"
 type: "academico"
+status: "terminado"
 repoUrl: "https://github.com/Grajal/SW2-YugiCollectionManager"
 featured: true
 date: 2025-06-01

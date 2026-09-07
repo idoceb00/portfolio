@@ -4,6 +4,7 @@ description: "Aplicación web análisis de progresión y rachas en el viedojuego
 tags: ["REST API", "PostgreSQL", "Docker", "AWS S3", "CI/CD", "Golang", "Gin", "Gorm"]
 category: "API REST"
 type: "personal"
+status: "terminado"
 repoUrl: "https://github.com/idoceb00/elogap"
 featured: true
 date: 2026-06-01

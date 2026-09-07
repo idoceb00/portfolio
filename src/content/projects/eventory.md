@@ -4,6 +4,7 @@ description: "Aplicación interna de gestión para empresas de eventos en vivo q
 tags: ["Java", "Spring Boot", "PostgreSQL", "SvelteKit", "TypeScript", "Docker"]
 category: "API REST"
 type: "personal"
+status: "en_desarrollo"
 repoUrl: "https://github.com/idoceb00/event-resource-manager"
 featured: true
 date: 2026-08-01
