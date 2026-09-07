@@ -1,7 +1,7 @@
 ---
 title: "YugiCollectionManager"
 description: "Aplicación web para digitalizar y gestionar colecciones de cartas, migrando la colección física de los usuarios a un entorno organizado."
-tags: ["REST API", "PostgreSQL", "Docker", "AWS S3", "CI/CD", "Golang", "Gin", "Gorm"]
+tags: ["REST API", "PostgreSQL", "Docker", "AWS S3", "CI/CD", "Go", "Gin", "Gorm"]
 category: "API REST"
 type: "academico"
 status: "terminado"
