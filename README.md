@@ -4,13 +4,14 @@ My personal portfolio — a fast, fully static single-page site that presents wh
 I am, the tools I work with, and the projects I've built. Designed around a
 bento-grid layout with a fixed dark theme.
 
-<!-- Ajusta el usuario/repo si el badge no coincide con tu repositorio real -->
 [![CI](https://github.com/idoceb00/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/idoceb00/portfolio/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+[![Astro](https://img.shields.io/badge/Astro-BC52EE?logo=astro&logoColor=white)](https://astro.build/)
+[![Svelte](https://img.shields.io/badge/Svelte%205-FF3E00?logo=svelte&logoColor=white)](https://svelte.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
-**Live:** [https://<tu-portfolio>.vercel.app <!-- pon aquí tu URL de Vercel -->](https://portfolio-drab-tau-gjgnoggu4c.vercel.app/)
+**Live:** [portfolio-drab-tau-gjgnoggu4c.vercel.app](https://portfolio-drab-tau-gjgnoggu4c.vercel.app/)
 
-![alt text](public/preview.png)
+![Screenshot of the portfolio's bento-grid layout](public/preview.png)
 
 ## Tech stack
 
@@ -25,12 +26,9 @@ bento-grid layout with a fixed dark theme.
 
 - Fully static output — the whole site ships as pre-rendered HTML
 - Bento-grid layout with a fixed dark theme
-- Content and configuration centralized in typed `.ts` files (`site-config.ts`,
-  dedicated data files for projects and experience) rather than scattered across
-  components
+- Content and configuration centralized in typed `.ts` files (`site-config.ts`, dedicated data files for projects and experience) rather than scattered across components
 - Clear separation between page structure and interactive component logic
-- Accessibility-conscious: dedicated `sr-only` copy so screen readers get clean,
-  linear text while the visual layout stays rich
+- Accessibility-conscious: dedicated `sr-only` copy so screen readers get clean, linear text while the visual layout stays rich
 - Privacy-friendly analytics via Umami event tracking
 - Content written in Spanish
 
@@ -76,15 +74,12 @@ src/
 
 ## Deployment
 
-Deployed on [Vercel](https://vercel.com/): every push to `main` triggers an
-automatic production deploy. A GitHub Actions workflow (`.github/workflows/ci.yml`)
-runs typecheck and build on every push and pull request.
+Deployed on [Vercel](https://vercel.com/): every push to `main` triggers an automatic production deploy. A GitHub Actions workflow (`.github/workflows/ci.yml`) runs typecheck and build on every push and pull request.
 
 ## Credits
 
-Built on top of the **astro-bento-portfolio** template,
-adapted under the MIT license. Full attribution is in [`NOTICE.md`](./NOTICE.md).
+Built on top of the **astro-bento-portfolio** template, adapted under the MIT license. Full attribution is in [`NOTICE.md`](./NOTICE.md).
 
 ## License
 
-Released under the [MIT License](./LICENSE).
+This repository is not released under an open-source license. The source code is public for reference, but the content — text, images and personal information — is not licensed for reuse. The underlying template remains under its original MIT license (see [`NOTICE.md`](./NOTICE.md)).
