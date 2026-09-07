@@ -12,12 +12,13 @@
 
   let { projects }: { projects: Project[] } = $props();
 
-  const languages = ["Go", "Java", "TypeScript"];
+  const languages = ["Go", "Java", "Python", "TypeScript"];
 
   const tagToLanguage: Record<string, string> = {
     Go: "Go",
     Golang: "Go",
     Java: "Java",
+    Python: "Python",
     TypeScript: "TypeScript",
   };
 

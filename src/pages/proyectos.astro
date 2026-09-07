@@ -4,12 +4,13 @@ import { getCollection } from "astro:content";
 import { SITE } from "../site-config";
 import ProjectFilter from "../components/ProjectFilter.svelte";
 
+const statusPriority: Record<string, number> = {
+  en_desarrollo: 0,
+  en_pausa: 1,
+  terminado: 2,
+};
+
 const allProjects = (await getCollection("projects"))
-  .sort((a, b) => {
-    const featDiff = Number(b.data.featured) - Number(a.data.featured);
-    if (featDiff !== 0) return featDiff;
-    return (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0);
-  })
   .map((p) => ({
     title: p.data.title,
     description: p.data.description,
@@ -19,7 +20,17 @@ const allProjects = (await getCollection("projects"))
     status: p.data.status,
     repoUrl: p.data.repoUrl,
     demoUrl: p.data.demoUrl,
-  }));
+    date: p.data.date,
+  }))
+  .sort((a, b) => {
+    if (a.type !== b.type) {
+      return a.type === "academico" ? -1 : 1;
+    }
+    if (a.type === "academico") {
+      return (b.date?.getTime() ?? 0) - (a.date?.getTime() ?? 0);
+    }
+    return (statusPriority[a.status] ?? 3) - (statusPriority[b.status] ?? 3);
+  });
 ---
 
 <Layout
