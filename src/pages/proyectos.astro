@@ -37,8 +37,8 @@ const allProjects = (await getCollection("projects"))
   title={`Proyectos - ${SITE.author.fullName}`}
   description="Proyectos de software en los que he trabajado."
 >
-  <main class="max-w-4xl mx-auto p-6 text-white">
-    <a href="/" class="text-sm opacity-70 hover:opacity-100 hover:text-primary-500">&larr; Volver al inicio</a>
+  <main class="max-w-4xl mx-auto p-6 text-ink">
+    <a href="/" class="text-sm opacity-70 hover:opacity-100 hover:text-accent">&larr; Volver al inicio</a>
     <h1 class="text-3xl font-bold mt-4 mb-10">Proyectos</h1>
 
     <ProjectFilter client:load projects={allProjects} />
