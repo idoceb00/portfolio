@@ -32,7 +32,7 @@
   --texture-2: #1c1c1c;
   --ink: #ffffff;
   --ink-muted: var(--darkslate-300);
-  --ink-page: #1f1f1f;
+  --ink-page: #fff;
   --line: var(--darkslate-400);
   --grid-line: #9b978e;
   --accent: var(--primary-500);

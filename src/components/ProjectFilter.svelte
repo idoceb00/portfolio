@@ -51,7 +51,7 @@
   <button
     class="px-3 py-1 rounded-full border text-sm transition-colors {selectedLanguage === null
       ? 'bg-accent border-accent text-black'
-      : 'border-line hover:border-accent'}"
+      : 'bg-surface-inverted text-ink border-line hover:border-accent-deep'}"
     onclick={() => (selectedLanguage = null)}
   >
     Todos
@@ -60,7 +60,7 @@
     <button
       class="px-3 py-1 rounded-full border text-sm transition-colors {selectedLanguage === lang
         ? 'bg-accent border-accent text-black'
-        : 'border-line hover:border-accent'}"
+        : 'bg-surface-inverted text-ink border-line hover:border-accent-deep'}"
       onclick={() => (selectedLanguage = lang)}
     >
       {lang}
@@ -73,7 +73,7 @@
     <h2 class="text-2xl font-bold mb-4">Personales</h2>
     <div class="grid gap-6 sm:grid-cols-2 mb-10">
       {#each personalProjects as project}
-        <article class="bg-surface-2 rounded-lg p-5 border border-line hover:border-accent transition-colors duration-300">
+        <article class="bg-surface-2 text-ink rounded-lg p-5 border border-line hover:border-accent transition-colors duration-300">
           <div class="flex items-center gap-2 mb-2">
             <span class="text-xs px-2 py-0.5 rounded-full {project.status === 'en_desarrollo' ? 'bg-green-500/20 text-green-400' : project.status === 'en_pausa' ? 'bg-yellow-500/20 text-yellow-400' : 'bg-surface-inverted text-ink-muted'}">
               {statusLabels[project.status] || project.status}
@@ -105,7 +105,7 @@
     <h2 class="text-2xl font-bold mb-4">Académicos</h2>
     <div class="grid gap-6 sm:grid-cols-2">
       {#each academicProjects as project}
-        <article class="bg-surface-2 rounded-lg p-5 border border-line hover:border-accent transition-colors duration-300">
+        <article class="bg-surface-2 text-ink rounded-lg p-5 border border-line hover:border-accent transition-colors duration-300">
           <div class="flex items-center gap-2 mb-2">
             <span class="text-xs px-2 py-0.5 rounded-full {project.status === 'en_desarrollo' ? 'bg-green-500/20 text-green-400' : project.status === 'en_pausa' ? 'bg-yellow-500/20 text-yellow-400' : 'bg-surface-inverted text-ink-muted'}">
               {statusLabels[project.status] || project.status}
@@ -135,7 +135,7 @@
 {:else}
   <div class="grid gap-6 sm:grid-cols-2">
     {#each filtered as project}
-      <article class="bg-surface-2 rounded-lg p-5 border border-line hover:border-accent transition-colors duration-300">
+      <article class="bg-surface-2 text-ink rounded-lg p-5 border border-line hover:border-accent transition-colors duration-300">
         <div class="flex items-center gap-2 mb-2">
           <span class="text-xs px-2 py-0.5 rounded-full {project.status === 'en_desarrollo' ? 'bg-green-500/20 text-green-400' : project.status === 'en_pausa' ? 'bg-yellow-500/20 text-yellow-400' : 'bg-surface-inverted text-ink-muted'}">
             {statusLabels[project.status] || project.status}
