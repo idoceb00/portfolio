@@ -3,7 +3,11 @@ import Card from "./Card/index.astro";
 import { SITE } from "../site-config";
 ---
 
-<Card colSpan="md:col-span-2" rowSpan="lg:row-span-9" title="Sobre mí">
+<Card
+  colSpan="md:col-span-2 lg:col-start-3"
+  rowSpan="lg:row-start-1 lg:row-span-8"
+  title="Sobre mí"
+>
   <div class="flex flex-col gap-3">
     <p class="sr-only">
       Soy un desarrollador que disfruta creando soluciones a problemas concretos con las herramientas que hagan falta, pero que siempre da una importancia especial al cómo: al diseño y la estructuración de los sistemas. Necesito saber el porqué de cada decisión, soy curioso y disfruto del proceso tanto como del resultado. Actualmente busco dar mis primeros pasos en el desarrollo de software. Fuera de la pantalla soy amante del deporte: jugador de rugby desde niño y también entrenador.
