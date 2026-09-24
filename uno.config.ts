@@ -57,6 +57,7 @@ export default defineConfig({
       ink: {
         DEFAULT: "var(--ink)",
         muted: "var(--ink-muted)",
+        page: "var(--ink-page)",
       },
       line: {
         DEFAULT: "var(--line)",
