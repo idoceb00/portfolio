@@ -11,7 +11,7 @@
   "dependencies": {
     "@astrojs/svelte": "^9.0.1",
     "@iconify-json/ri": "^1.2.10",
-    "astro": "^7.2.4",
+    "astro": "^7.3.5",
     "astro-icon": "^1.1.5",
     "svelte": "^5.56.8"
   },
