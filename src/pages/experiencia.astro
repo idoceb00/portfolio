@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { SITE } from "../site-config";
 import { jobs } from "../lib/experience";
+import BackButton from "../components/BackButton.astro";
 ---
 
 <Layout
@@ -9,18 +10,24 @@ import { jobs } from "../lib/experience";
   description="Experiencia profesional."
 >
   <main class="max-w-4xl mx-auto p-6 text-ink-page">
-    <a href="/" class="text-sm opacity-70 hover:opacity-100 hover:text-accent-deep">&larr; Volver al inicio</a>
+    <BackButton />
     <h1 class="text-3xl font-bold mt-4 mb-10">Experiencia</h1>
-    <ul class="flex flex-col gap-8">
+
+    <div class="flex flex-col gap-6">
       {jobs.map((job) => (
-        <li class="border-b border-line pb-6 last:border-none">
-          <div class="flex justify-between items-baseline flex-wrap gap-1">
-            <h2 class="font-bold text-xl">{job.role} · {job.company}</h2>
-            <span class="text-sm opacity-60">{job.start} – {job.end}</span>
+        <article class="bg-surface-2 text-ink rounded-lg p-5 border border-line hover:border-accent transition-colors duration-300">
+          <div class="flex justify-between items-start flex-wrap gap-2">
+            <div>
+              <h2 class="font-bold text-xl">{job.role}</h2>
+              <p class="text-ink-muted">{job.company}</p>
+            </div>
+            <span class="text-xs px-2 py-0.5 rounded-full bg-surface-inverted text-ink-muted whitespace-nowrap">
+              {job.start} – {job.end}
+            </span>
           </div>
-          <p class="text-sm opacity-80 mt-2">{job.description}</p>
-        </li>
+          <p class="text-sm opacity-80 mt-3">{job.description}</p>
+        </article>
       ))}
-    </ul>
+    </div>
   </main>
 </Layout>
