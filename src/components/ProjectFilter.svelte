@@ -50,8 +50,8 @@
 <div class="flex gap-2 flex-wrap mb-6">
   <button
     class="px-3 py-1 rounded-full border text-sm transition-colors {selectedLanguage === null
-      ? 'bg-primary-500 border-primary-500 text-black'
-      : 'border-darkslate-400 hover:border-primary-500'}"
+      ? 'bg-accent border-accent text-black'
+      : 'bg-surface-inverted text-ink border-line hover:border-accent-deep'}"
     onclick={() => (selectedLanguage = null)}
   >
     Todos
@@ -59,8 +59,8 @@
   {#each languages as lang}
     <button
       class="px-3 py-1 rounded-full border text-sm transition-colors {selectedLanguage === lang
-        ? 'bg-primary-500 border-primary-500 text-black'
-        : 'border-darkslate-400 hover:border-primary-500'}"
+        ? 'bg-accent border-accent text-black'
+        : 'bg-surface-inverted text-ink border-line hover:border-accent-deep'}"
       onclick={() => (selectedLanguage = lang)}
     >
       {lang}
@@ -73,9 +73,9 @@
     <h2 class="text-2xl font-bold mb-4">Personales</h2>
     <div class="grid gap-6 sm:grid-cols-2 mb-10">
       {#each personalProjects as project}
-        <article class="bg-darkslate-600 rounded-lg p-5 border border-darkslate-400 hover:border-primary-500 transition-colors duration-300">
+        <article class="bg-surface-2 text-ink rounded-lg p-5 border border-line hover:border-accent transition-colors duration-300">
           <div class="flex items-center gap-2 mb-2">
-            <span class="text-xs px-2 py-0.5 rounded-full {project.status === 'en_desarrollo' ? 'bg-green-500/20 text-green-400' : project.status === 'en_pausa' ? 'bg-yellow-500/20 text-yellow-400' : 'bg-darkslate-500 text-darkslate-300'}">
+            <span class="text-xs px-2 py-0.5 rounded-full {project.status === 'en_desarrollo' ? 'bg-green-500/20 text-green-400' : project.status === 'en_pausa' ? 'bg-yellow-500/20 text-yellow-400' : 'bg-surface-inverted text-ink-muted'}">
               {statusLabels[project.status] || project.status}
             </span>
           </div>
@@ -84,16 +84,16 @@
           {#if project.tags.length > 0}
             <div class="flex gap-2 flex-wrap mt-3">
               {#each project.tags as t}
-                <span class="text-xs px-2 py-1 rounded bg-darkslate-500">{t}</span>
+                <span class="text-xs px-2 py-1 rounded bg-surface-inverted">{t}</span>
               {/each}
             </div>
           {/if}
           <div class="flex gap-4 mt-4 text-sm">
             {#if project.repoUrl}
-              <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" class="underline hover:text-primary-500">Código</a>
+              <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" class="underline hover:text-accent">Código</a>
             {/if}
             {#if project.demoUrl}
-              <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" class="underline hover:text-primary-500">Demo</a>
+              <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" class="underline hover:text-accent">Demo</a>
             {/if}
           </div>
         </article>
@@ -105,9 +105,9 @@
     <h2 class="text-2xl font-bold mb-4">Académicos</h2>
     <div class="grid gap-6 sm:grid-cols-2">
       {#each academicProjects as project}
-        <article class="bg-darkslate-600 rounded-lg p-5 border border-darkslate-400 hover:border-primary-500 transition-colors duration-300">
+        <article class="bg-surface-2 text-ink rounded-lg p-5 border border-line hover:border-accent transition-colors duration-300">
           <div class="flex items-center gap-2 mb-2">
-            <span class="text-xs px-2 py-0.5 rounded-full {project.status === 'en_desarrollo' ? 'bg-green-500/20 text-green-400' : project.status === 'en_pausa' ? 'bg-yellow-500/20 text-yellow-400' : 'bg-darkslate-500 text-darkslate-300'}">
+            <span class="text-xs px-2 py-0.5 rounded-full {project.status === 'en_desarrollo' ? 'bg-green-500/20 text-green-400' : project.status === 'en_pausa' ? 'bg-yellow-500/20 text-yellow-400' : 'bg-surface-inverted text-ink-muted'}">
               {statusLabels[project.status] || project.status}
             </span>
           </div>
@@ -116,16 +116,16 @@
           {#if project.tags.length > 0}
             <div class="flex gap-2 flex-wrap mt-3">
               {#each project.tags as t}
-                <span class="text-xs px-2 py-1 rounded bg-darkslate-500">{t}</span>
+                <span class="text-xs px-2 py-1 rounded bg-surface-inverted">{t}</span>
               {/each}
             </div>
           {/if}
           <div class="flex gap-4 mt-4 text-sm">
             {#if project.repoUrl}
-              <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" class="underline hover:text-primary-500">Código</a>
+              <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" class="underline hover:text-accent">Código</a>
             {/if}
             {#if project.demoUrl}
-              <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" class="underline hover:text-primary-500">Demo</a>
+              <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" class="underline hover:text-accent">Demo</a>
             {/if}
           </div>
         </article>
@@ -135,12 +135,12 @@
 {:else}
   <div class="grid gap-6 sm:grid-cols-2">
     {#each filtered as project}
-      <article class="bg-darkslate-600 rounded-lg p-5 border border-darkslate-400 hover:border-primary-500 transition-colors duration-300">
+      <article class="bg-surface-2 text-ink rounded-lg p-5 border border-line hover:border-accent transition-colors duration-300">
         <div class="flex items-center gap-2 mb-2">
-          <span class="text-xs px-2 py-0.5 rounded-full {project.status === 'en_desarrollo' ? 'bg-green-500/20 text-green-400' : project.status === 'en_pausa' ? 'bg-yellow-500/20 text-yellow-400' : 'bg-darkslate-500 text-darkslate-300'}">
+          <span class="text-xs px-2 py-0.5 rounded-full {project.status === 'en_desarrollo' ? 'bg-green-500/20 text-green-400' : project.status === 'en_pausa' ? 'bg-yellow-500/20 text-yellow-400' : 'bg-surface-inverted text-ink-muted'}">
             {statusLabels[project.status] || project.status}
           </span>
-          <span class="text-xs px-2 py-0.5 rounded-full bg-darkslate-500 text-darkslate-300">
+          <span class="text-xs px-2 py-0.5 rounded-full bg-surface-inverted text-ink-muted">
             {typeLabels[project.type] || project.type}
           </span>
         </div>
@@ -149,16 +149,16 @@
         {#if project.tags.length > 0}
           <div class="flex gap-2 flex-wrap mt-3">
             {#each project.tags as t}
-              <span class="text-xs px-2 py-1 rounded bg-darkslate-500">{t}</span>
+              <span class="text-xs px-2 py-1 rounded bg-surface-inverted">{t}</span>
             {/each}
           </div>
         {/if}
         <div class="flex gap-4 mt-4 text-sm">
           {#if project.repoUrl}
-            <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" class="underline hover:text-primary-500">Código</a>
+            <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" class="underline hover:text-accent">Código</a>
           {/if}
           {#if project.demoUrl}
-            <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" class="underline hover:text-primary-500">Demo</a>
+            <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" class="underline hover:text-accent">Demo</a>
           {/if}
         </div>
       </article>

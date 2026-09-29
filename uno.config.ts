@@ -48,6 +48,25 @@ export default defineConfig({
         800: "var(--primary-800)",
         900: "var(--primary-900)",
       },
+      bg: "var(--bg)",
+      surface: "var(--surface)",
+      "surface-2": "var(--surface-2)",
+      "surface-inverted": "var(--surface-inverted)",
+      "texture-1": "var(--texture-1)",
+      "texture-2": "var(--texture-2)",
+      ink: {
+        DEFAULT: "var(--ink)",
+        muted: "var(--ink-muted)",
+        page: "var(--ink-page)",
+      },
+      line: {
+        DEFAULT: "var(--line)",
+        grid: "var(--grid-line)",
+      },
+      accent: {
+        DEFAULT: "var(--accent)",
+        deep: "var(--accent-deep)",
+      },
     },
   },
   presets: [

@@ -10,7 +10,7 @@ const projects = await getCollection("projects");
   body={`${projects.length} proyecto${projects.length === 1 ? "" : "s"} en los que he trabajado.`}
   href="/proyectos"
   bgColor="stripes-diagonal"
-  colSpan="md:col-span-1"
-  rowSpan="md:row-span-2"
-  height="flex-1"
+  colSpan="md:col-span-1 md:col-start-2 lg:col-start-2"
+  rowSpan="md:row-span-1 lg:row-start-5 lg:row-span-2"
+  height="h-full"
 />
