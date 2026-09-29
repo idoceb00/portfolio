@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import Card from "./Card/index.astro";
 import { LINKS } from "../lib/constants";
 import { SITE } from "../site-config";
@@ -8,22 +9,54 @@ import { SITE } from "../site-config";
   <div class="h-full">
     <header class="flex items-center">
       <h2 class="text-ink text-xl font-bold">
-        ¡Empecemos a trabajar juntos!
+        Dónde encontrarme
       </h2>
     </header>
-    <address class="flex flex-col mt-4">
-      <h2 class="text-ink-muted">Datos de contacto</h2>
-      <p class="text-sm">{SITE.links.email}</p>
+
+    <address class="flex flex-col mt-4 w-fit not-italic">
+      <p class="text-ink-muted">Datos de contacto</p>
+      <p>{SITE.author.fullName}</p>
+      <a href={`mailto:${SITE.links.email}`} class="hover:underline">
+        {SITE.links.email}
+      </a>
       <p>{SITE.location.city}, {SITE.location.countryName}</p>
     </address>
+
     <div class="flex flex-col mt-4 w-fit">
-      <h2 class="text-ink-muted">Redes sociales</h2>
+      <p class="text-ink-muted">Redes sociales</p>
       <ul>
         <li>
-          <a href={LINKS.linkedin} target="_blank">Linkedin</a>
+          <a
+            href={LINKS.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1 hover:underline"
+          >
+            LinkedIn
+            <Icon name="ri:arrow-right-up-line" class="w-4 h-4" aria-hidden="true" />
+          </a>
         </li>
         <li>
-          <a href={LINKS.github} target="_blank">Github</a>
+          <a
+            href={LINKS.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1 hover:underline"
+          >
+            GitHub
+            <Icon name="ri:arrow-right-up-line" class="w-4 h-4" aria-hidden="true" />
+          </a>
+        </li>
+        <li>
+          <a
+          href={LINKS.codewars}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1 hover:underline"
+          >
+          Codewars
+          <Icon name="ri:arrow-right-up-line" class="w-4 h-4" aria-hidden="true" />
+        </a>
         </li>
       </ul>
     </div>
