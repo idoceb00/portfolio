@@ -22,5 +22,9 @@ export const SITE = {
         email: "idoceb00@gmail.com",
         codewars: "https://www.codewars.com/users/idoceb00"
     },
+    availability:{
+        available: true,
+        label: "Disponible para trabajar"
+    },
     stack: ["Go (Gin, GORM)", "Python (FastAPI, Pydantic)", "Java (Spring Boot)", "PostgreSQL", "MySQL", "MongoDB", "Docker", "Git", "GitHub Actions"],
 }

@@ -1,6 +1,5 @@
 ---
 import "../style.css";
-import { LINKS } from "../lib/constants";
 import { SITE } from "../site-config";
 
 interface Props {
@@ -16,7 +15,7 @@ const schema = {
   "@type": "Person",
   name: SITE.author.fullName,
   url: Astro.url.origin,
-  sameAs: [LINKS.linkedin, LINKS.github],
+  sameAs: [SITE.links.linkedin, SITE.links.github],
   image: `${Astro.url.origin}/og-image.png`,
   jobTitle: SITE.author.jobTitle,
   knowsAbout: ["Go", "Python", "Java", "REST APIs", "PostgreSQL", "Docker", "FastAPI", "NLP"],

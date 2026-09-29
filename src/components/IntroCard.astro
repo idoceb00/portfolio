@@ -1,7 +1,6 @@
 ---
 import Card from "./Card/index.astro";
 import Button from "./Button.astro";
-import { LINKS } from "../lib/constants";
 import { Icon } from "astro-icon/components";
 import { SITE } from "../site-config";
 import MyAvatar from "../assets/me.png";
@@ -12,7 +11,7 @@ import MyAvatar from "../assets/me.png";
     <div class="flex flex-col-reverse md:flex-row w-full gap-4">
       <div class="flex flex-col gap-4 min-w-0 overflow-hidden">
         <h6 class="text-sm font-medium uppercase tracking-widest m-0 text-accent">Bienvenido</h6>
-
+          
         <p class="sr-only">
           Hola, soy {SITE.author.fullName}, desarrollador de software recién
           graduado en Ingeniería Informática, con un foco especial en la lógica y
@@ -44,34 +43,39 @@ import MyAvatar from "../assets/me.png";
       />
     </div>
 
-    <div class="flex flex-row flex-wrap gap-2 lg:gap-4 mt-auto">
-      <div class="flex gap-2 lg:gap-4">
-        <a href={LINKS.github} aria-label="perfil de github" target="_blank">
-          <Button aria-label="perfil de github">
-            <Icon name="ri:github-fill" />
-            <span class="sr-only" data-umami-event="github button"
-              >Perfil de GitHub</span
-            >
+      <div class="flex flex-row flex-wrap items-center gap-2 lg:gap-4 mt-auto">
+        <div class="flex gap-2 lg:gap-4">
+          <a href={SITE.links.github} aria-label="perfil de github" target="_blank" rel="noopener noreferrer">
+            <Button aria-label="perfil de github">
+              <Icon name="ri:github-fill" />
+              <span class="sr-only" data-umami-event="github button"
+                >Perfil de GitHub</span
+              >
+            </Button>
+          </a>
+
+          <a href={SITE.links.linkedin} aria-label="perfil de linkedin" target="_blank" rel="noopener noreferrer">
+            <Button aria-label="perfil de linkedin">
+              <Icon name="ri:linkedin-box-fill" />
+              <span class="sr-only" data-umami-event="linkedin button">Perfil de LinkedIn</span>
+            </Button>
+          </a>
+        </div>
+        <a href={`mailto:${SITE.links.email}`}>
+          <Button aria-label="envíame un email">
+            <Icon data-umami-event="Contact button" name="ri:mail-fill" />
           </Button>
         </a>
-        <a
-          href={LINKS.linkedin}
-          aria-label="perfil de linkedin"
-          target="_blank"
-        >
-          <Button aria-label="perfil de linkedin">
-            <Icon name="ri:linkedin-box-fill" />
-            <span class="sr-only" data-umami-event="linkedin button"
-              >Perfil de LinkedIn</span
-            >
-          </Button>
-        </a>
-      </div>
-      <a href={`mailto:${LINKS.email}`}>
-        <Button aria-label="envíame un email">
-          <Icon data-umami-event="Contact button" name="ri:mail-fill" />
-        </Button>
-      </a>
+
+        {SITE.availability.available && (
+          <span class="ml-auto inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300">
+            <span class="relative flex h-2 w-2" aria-hidden="true">
+              <span class="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 motion-safe:animate-ping"></span>
+              <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
+            </span>
+            {SITE.availability.label}
+          </span>
+        )}
     </div>
   </div>
 </Card>
