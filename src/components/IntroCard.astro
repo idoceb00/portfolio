@@ -1,6 +1,7 @@
 ---
 import Card from "./Card/index.astro";
 import Button from "./Button.astro";
+import AvailabilityBadge  from "./AvailabilityBadge.astro";
 import { Icon } from "astro-icon/components";
 import { SITE } from "../site-config";
 import MyAvatar from "../assets/me.png";
@@ -10,7 +11,12 @@ import MyAvatar from "../assets/me.png";
   <div class="flex flex-col w-full h-full gap-4">
     <div class="flex flex-col-reverse md:flex-row w-full gap-4">
       <div class="flex flex-col gap-4 min-w-0 overflow-hidden">
-        <h6 class="text-sm font-medium uppercase tracking-widest m-0 text-accent">Bienvenido</h6>
+        <div class="felx flex-wrap items-center gap-3">
+          <h6 class="text-sm font-medium uppercase tracking-widest m-0 text-accent">Bienvenido</h6>
+          <div class="md:hidden">
+            <AvailabilityBadge />
+          </div>
+        </div>
           
         <p class="sr-only">
           Hola, soy {SITE.author.fullName}, desarrollador de software recién
@@ -67,15 +73,9 @@ import MyAvatar from "../assets/me.png";
           </Button>
         </a>
 
-        {SITE.availability.available && (
-          <span class="ml-auto inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300">
-            <span class="relative flex h-2 w-2" aria-hidden="true">
-              <span class="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 motion-safe:animate-ping"></span>
-              <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
-            </span>
-            {SITE.availability.label}
-          </span>
-        )}
+        <div class="hidden md:block ml-auto">
+          <AvailabilityBadge />
+        </div>
     </div>
   </div>
 </Card>
