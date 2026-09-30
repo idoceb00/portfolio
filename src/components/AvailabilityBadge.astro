@@ -1,13 +1,13 @@
 ---
-import { SITE } from "../site-config"
+import { SITE } from "../site-config";
 ---
 
 {SITE.availability.available && (
-    <span class="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300">
-        <span class="relative flex h-2 w-2" aria-hidden="true">
-            <span class="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 motion-safe:animate-ping"></span>
-            <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
-        </span>
-        {SITE.availability.label}
+  <span class="inline-flex items-center gap-1.5 md:gap-2 whitespace-nowrap rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 md:px-3 py-1 text-[11px] md:text-xs font-medium text-emerald-300">
+    <span class="relative flex h-2 w-2" aria-hidden="true">
+      <span class="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 motion-safe:animate-ping"></span>
+      <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
     </span>
+    {SITE.availability.label}
+  </span>
 )}
